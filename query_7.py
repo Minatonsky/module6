@@ -15,7 +15,6 @@ LEFT JOIN groups g ON g.id = s.group_id
 LEFT JOIN stud_marks sm ON sm.student_id = s.id
 LEFT JOIN subjects sbj ON sbj.id = sm.subj_id
 WHERE g.group_name = 'Group-2' AND sbj.name = 'Computer Science';
-
 """
 
 print(execute_query(sql))

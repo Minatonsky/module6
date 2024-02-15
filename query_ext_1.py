@@ -15,8 +15,8 @@ FROM stud_marks sm
 JOIN subjects s ON sm.subj_id = s.id
 JOIN lecturers l ON s.lecturer_id = l.id
 JOIN students st ON sm.student_id = st.id
-GROUP BY l.id, st.id
-ORDER BY lecturer_name, student_name;
+WHERE l.name = 'Andrew' AND l.last_name = 'Douglas' AND st.name = 'John' AND st.last_name = 'Smith'
+GROUP BY l.id, st.id;
 """
 
 print(execute_query(sql))

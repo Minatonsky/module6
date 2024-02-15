@@ -9,11 +9,12 @@ def execute_query(sql: str) -> list:
 
 
 sql = """
-SELECT l.name, l.last_name, s.name AS subject_name, round(avg(sm.mark), 2) AS average_mark
+SELECT l.name, l.last_name, round(avg(sm.mark), 2) AS average_mark
 FROM lecturers l
 JOIN subjects s ON s.lecturer_id = l.id
 JOIN stud_marks sm ON sm.subj_id = s.id
-GROUP BY l.id, s.id;
+WHERE l.name = 'Jason' AND l.last_name = 'Perez'
+GROUP BY l.id;
 """
 
 print(execute_query(sql))
